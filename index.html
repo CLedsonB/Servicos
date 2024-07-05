@@ -21,10 +21,46 @@
         <a href="frontend.html"><li>Programação Front - End</li></a>
         <a href="chatbot.html"><li>Criação de Chat - Bot</li></a>
       </ul>
+      <aside id="quest">
+      <div class="dark">
+        <h3>Tem alguma coisa a dizer?</h3>
+        <form id="forms" method="POST" enctype="text/plain" class="quote">
+  						<div>
+  							<label>Nome</label><br>
+  							<input id="nome" type="text" placeholder="Nome" required>
+  						</div>
+  						<div>
+  							<label>Email</label><br>
+  							<input id="email" type="email" placeholder="Endereço de e-mail" required>
+  						</div>
+  						<div>
+  							<label>Message</label><br>
+  							<textarea id="mensagem" placeholder="Digite sua mensagem..." rows="5" required></textarea>
+  						</div>
+  						<button id="botao" onclick="ObterValor()" type="submit">Enviar</button>
+					  </form>
+      </div>
+      </aside>
     </main>
     <footer>
       <p><b>CLedsonB</b>, Copyright &copy; 2024</p>
     </footer>
+    <script>
+      function ObterValor() {
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+        
+        gmail = "mailto:edzzon2@gmail.com"
+        assunto = "?subject=mensagem_do_site_servicos&body="
+        cumprimento = "Olá, Sr. Cledson, meu nome é " + nome + "\n";
+       
+        envio = gmail + assunto + cumprimento + mensagem
+        document.getElementById("forms").action = envio
+        
+        
+      }
+    </script>
   </body>
 </html>
   
